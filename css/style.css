@@ -1,0 +1,271 @@
+/* Paleta de colores */
+:root {
+    --color-primario: #d35400; /* Naranja desvanecido */
+    --color-secundario: #bdc3c7; /* Gris desvanecido */
+    --color-terciario: #7f8c8d; /* Gris azulado desvanecido */
+}
+
+
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-secundario);
+    color: #f9f6f6; /* Color de texto */
+    padding: 20px;
+    margin: 0;
+}
+
+.container-fluid {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* título */
+#title {
+    margin-top: 30px;
+    text-align: center;
+    color: #f05e0f;
+    font-size: 36px; /* Aumenta el tamaño de la fuente */
+    font-weight: bold; /* Hace que el texto sea más grueso */
+    text-transform: uppercase; /* Convierte el texto en mayúsculas */
+    letter-spacing: 2px; /* Aumenta el espacio entre letras */
+    border-radius: 30px;
+}
+
+
+#title:hover {
+    transform: scale(1.1); /* Escalamos ligeramente en hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Incrementamos la intensidad de la sombra en hover */
+}
+
+
+
+/* presentación */
+.parrafo {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/*formulario */
+#restau {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: var(--color-primario);
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/*botón */
+button[type="submit"] {
+    background-color: var(--color-secundario);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: darken(var(--color-secundario), 10%);
+}
+
+.btn-primary {
+    background-color: var(--color-secundario);
+    border-color: var(--color-secundario);
+}
+
+.btn-primary:hover {
+    background-color: darken(var(--color-secundario), 10%);
+    border-color: darken(var(--color-secundario), 10%);
+}
+
+/*menu */
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    color: var(--color-primario);
+}
+
+/* platos */
+.platos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.plato {
+    background-color: var(--color-primario);
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: calc(33.33% - 20px);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.plato:hover {
+    transform: translateY(-5px);
+}
+
+.plato h3 {
+    margin-top: 0;
+}
+
+.plato p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.precio {
+    display: block;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* platos destacados */
+#platos-destacados .plato.destacado {
+    background-color: var(--color-terciario);
+}
+
+/* promociones */
+.promociones-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.promocion {
+    background-color: var(--color-primario);
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: calc(50% - 20px);
+    border-radius: 10px;
+}
+
+.promocion h3 {
+    margin-top: 0;
+}
+
+.promocion p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/*promociones destacadas */
+#promociones .promocion.destacada {
+    background-color: var(--color-primario);
+}
+
+/* redes sociales */
+.social-icons {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.social-icons li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* dirección */
+address {
+    font-style: normal;
+}
+
+.mapouter {
+    position: relative;
+    text-align: right;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%; /* Proporción 16:9 */
+    margin: 0 auto;
+}
+.gmap_canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#gmap_canvas {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* esto es de chatgpt no encontre como hacerlo responcible
+en todos los dispositivos... */
+/* Agrega estas reglas al final de tu archivo CSS */
+
+/* Estilos generales para dispositivos pequeños */
+@media screen and (max-width: 768px) {
+    .platos-container {
+        flex-direction: column;
+    }
+
+    .plato, .promocion {
+        width: 100%;
+    }
+}
+
+/* Estilos específicos para tabletas */
+@media screen and (max-width: 1024px) {
+    .plato, .promocion {
+        width: calc(50% - 20px);
+    }
+}
+
+/* Estilos específicos para dispositivos móviles */
+@media screen and (max-width: 480px) {
+    .plato, .promocion {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+
+
+
+
+
